@@ -6,7 +6,7 @@
  - HMR - Hot Module Replacement ( uses a file watcher algorithm , that is written in c++)
  - Caching - Faster build everytime as it caches build each time 
  - Image Optimization 
- - Minification of filess
+ - Minification of filess 
  - Bundling
  - Compressing
  - consistent hashing 
