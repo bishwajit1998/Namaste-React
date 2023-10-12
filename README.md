@@ -17,3 +17,37 @@
  - HTTPS 
  - Tree Shaking
  and lot loot more ( view : parceljs.org)
+
+
+Food Ordering app 
+
+ //what is a react Element
+//JSX
+// const jsxHeading = (<h1 className="head" tabIndex="5">
+//     Namaste React using JSX 🚀
+//     </h1>);
+
+//React Components
+//Class Based Components - old way
+//Functional Component - New way
+/*
+*- Header 
+* -logo 
+* -navitems
+*-body
+* -searchbar
+* -searchbutton
+* -restraunt container
+*  -image
+*  -star
+*-footer
+* -copyright
+* -links
+* -address
+* -contact
+
+*/
+//
+
+#React Hooks 
+-> ( Normal JS utility funtions )
