@@ -7,9 +7,12 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   // Local State Variable - Super powerful variable
   const [listOfRestraunts, setListOfRestraunt] = useState([]);
+  const [filteredRestraunt, setfilteredRestraunt] = useState([]);
   const [searchText, setSearchText] = useState("");
+
   //whenever local state variablle changes , react triggers a reconciliation cycle
-  console.log("rerendered");
+  //console.log("rerendered", filteredRestraunt, searchText);
+  console.log("Body Rendered");
   useEffect(() => {
     fetchData();
   }, []);
@@ -21,13 +24,11 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(
-      //json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[1].info.name
-      json.data
-    );
-
     //optional chaining
     setListOfRestraunt(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setfilteredRestraunt(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -53,7 +54,11 @@ const Body = () => {
             onClick={() => {
               //filter the res and update the UI
               //searchtext
-              console.log(searchText);
+              //filter logic
+              const _filteredRestraunt = listOfRestraunts.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setfilteredRestraunt(_filteredRestraunt);
             }}
           >
             Search
@@ -74,7 +79,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRestraunts.map((restraunt) => (
+        {filteredRestraunt.map((restraunt) => (
           <RestrauntCard key={restraunt.info.id} resData={restraunt} />
         ))}
       </div>
