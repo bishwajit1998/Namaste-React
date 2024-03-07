@@ -5,7 +5,9 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/ContactUs";
 import Error from "./components/Error";
-
+//createBrowserRouter helps create different routes
+//RouterProvider helps render these routes to the page
+//Outlet helps fill children rotes
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 //not using keys (not acceptable) <<<<index as key <<<<< unique is (best practice)
