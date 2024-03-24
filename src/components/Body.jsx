@@ -3,6 +3,7 @@ import RestrauntCard from "./RestrauntCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 //import resList from "../utils/mockdata";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -80,7 +81,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestraunt.map((restraunt) => (
-          <RestrauntCard key={restraunt.info.id} resData={restraunt} />
+          <Link key={restraunt.info.id} to={"/restraunt/" + restraunt.info.id}>
+            <RestrauntCard resData={restraunt} />
+          </Link>
         ))}
       </div>
     </div>
