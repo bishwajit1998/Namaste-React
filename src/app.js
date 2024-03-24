@@ -9,6 +9,7 @@ import Error from "./components/Error";
 //RouterProvider helps render these routes to the page
 //Outlet helps fill children rotes
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestrauntMenu from "./components/RestrauntMenu";
 
 //not using keys (not acceptable) <<<<index as key <<<<< unique is (best practice)
 
@@ -38,6 +39,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/restraunt/:resId",
+        element: <RestrauntMenu />,
       },
     ],
 

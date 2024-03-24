@@ -57,3 +57,8 @@ Food Ordering app
 
 1. named export
 2. default export
+
+# 2 types of routing
+
+1. Client side Routing
+2. Server Side Routing
